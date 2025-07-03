@@ -1,4 +1,6 @@
 #
 # BACKENDLAYOUTS
 #
+mod.web_layout.BackendLayouts >
+
 <INCLUDE_TYPOSCRIPT: source="DIR:EXT:bprotaryclubvicopisano/Configuration/TsConfig/Page/Mod/WebLayout/BackendLayouts" extensions="tsconfig">

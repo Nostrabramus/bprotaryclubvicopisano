@@ -1,0 +1,69 @@
+#
+# BACKENDLAYOUT: EXAMPLE
+#
+mod {
+    web_layout {
+        BackendLayouts {
+            home {
+                title = Home Page
+                config {
+                    backend_layout {
+                        colCount = 12
+                        rowCount = 3
+                        rows {
+                            1 {
+                                columns {
+                                    1 {
+                                        name = Banner Sinistra
+                                        colPos = 1
+                                        colspan = 3
+                                    }
+                                    2 {
+                                        name = Contenuto Principale
+                                        colPos = 0
+                                        colspan = 6
+                                    }
+                                    3 {
+                                        name = Colonna Destra
+                                        colPos = 2
+                                        colspan = 3
+                                        rowspan = 2
+                                    }
+                                }
+                            }
+                            2 {
+                                columns {
+                                    1 {
+                                        name = News
+                                        colPos = 3
+                                        colspan = 9
+                                    }
+                                }
+                            }
+                            3 {
+                                columns {
+                                    1 {
+                                        name = Footer Sx
+                                        colPos = 7
+                                        colspan = 4
+                                    }
+                                    2 {
+                                        name = Footer Cx
+                                        colPos = 8
+                                        colspan = 4
+                                    }
+                                    3 {
+                                        name = Footer Dx
+                                        colPos = 9
+                                        colspan = 4
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                icon = EXT:bprotaryclubvicopisano/Resources/Public/Icons/BackendLayouts/home.svg
+            }
+        }
+    }
+}
