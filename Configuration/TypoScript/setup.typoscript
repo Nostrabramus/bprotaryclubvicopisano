@@ -9,7 +9,7 @@
 ##############
 page {
     includeCSS {
-        theme = EXT:bprotaryclubvicopisano/Resources/Public/Scss/Theme/theme.scss
+        rcvico = EXT:bprotaryclubvicopisano/Resources/Public/Scss/Theme/rcvico.scss
     }
 
     includeJSLibs {
