@@ -9,10 +9,10 @@
 ############
 page {
     logo {
-        file = EXT:bprotaryclubvicopisano/Resources/Public/Images/logo.svg
-        fileInverted = EXT:bprotaryclubvicopisano/Resources/Public/Images/logo-inverted.svg
-        height = 52
-        width = 192
+        file = EXT:bprotaryclubvicopisano/Resources/Public/Images/logo-rc-vicopisano.png
+        fileInverted = EXT:bprotaryclubvicopisano/Resources/Public/Images/logo-rc-vicopisano.png
+        height = 62
+        width = 180
         alt = BPRotaryClubVicopisano
         linktitle = BPRotaryClubVicopisano
     }
@@ -55,6 +55,6 @@ plugin.bootstrap_package_contentelements {
 ### BOOTSTRAP SCSS CONSTANTS ###
 ################################
 plugin.bootstrap_package.settings.scss {
-    primary = #eb3e4a
-    secondary = #013859
+    primary = #10559d
+    secondary = #fab200
 }
