@@ -58,3 +58,16 @@ plugin.bootstrap_package.settings.scss {
     primary = #10559d
     secondary = #fab200
 }
+
+##########################
+### BOOTSTRAP CONTACTS ###
+##########################
+page.theme.socialmedia.channels {
+    facebook.url = https://www.facebook.com/profile.php?id=61576313400493
+    instagram.url = https://www.instagram.com/
+}
+page.theme.contact.data {
+    addressLine1 = Via Salutini n. 2, Vicopisano, Italy
+    email = rotaryvicopisano@gmail.com
+    title = Rotary Club Vicopisano
+}
