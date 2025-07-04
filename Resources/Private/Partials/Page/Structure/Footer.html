@@ -3,10 +3,12 @@
     <footer class="container-fluid orange pt-4 pb-2 px-4">
         <div class="row text-center">
             <div class="col-sm-4 text-md-start">
+                <f:render partial="Structure/FooterContact" arguments="{_all}" />
                 <f:cObject typoscriptObjectPath="lib.dynamicContent" data="{pageUid: '{data.uid}', colPos: '7', slide: '-1'}"/>
             </div>
 
             <div class="col-sm-4">
+                <f:render partial="Structure/FooterMeta" arguments="{_all}" />
                 <f:cObject typoscriptObjectPath="lib.dynamicContent" data="{pageUid: '{data.uid}', colPos: '8', slide: '-1'}"/>
             </div>
 
