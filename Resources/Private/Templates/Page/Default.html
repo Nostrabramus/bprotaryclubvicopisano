@@ -1,0 +1,16 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:layout name="Default" />
+<f:layout name="Default" />
+<f:section name="Main">
+
+    <!--BREADCRUMBS -->
+    <section class="container-fluid py-3 px-0">
+        <f:render partial="Navigation/Breadcrumb" arguments="{_all}" />
+    </section>
+
+    <section class="container-fluid pt-1 pb-2 px-0">
+        <f:cObject typoscriptObjectPath="lib.dynamicContent" data="{colPos: '0'}" />
+    </section>
+
+</f:section>
+</html>
