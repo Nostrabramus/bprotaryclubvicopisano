@@ -59,6 +59,11 @@ plugin.bootstrap_package.settings.scss {
     secondary = #fab200
 }
 
+############################
+### BOOTSTRAP NAVIGATION ###
+############################
+page.theme.breadcrumb.enableLevel = 1
+
 ##########################
 ### BOOTSTRAP CONTACTS ###
 ##########################
