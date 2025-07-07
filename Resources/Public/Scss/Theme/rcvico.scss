@@ -11,3 +11,15 @@
 .footer-section-content {
   background-color: $primary;
 }
+
+.fb-page-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding-top: 42px;
+
+  .fb-page {
+    flex: 1;
+    min-height: 0;
+  }
+}
