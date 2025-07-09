@@ -1,0 +1,11 @@
+plugin.tx_eventnews.view {
+    templateRootPaths {
+        10 = EXT:bprotaryclubvicopisano/Resources/Private/Templates/Extensions/EventNews/
+    }
+    partialRootPaths {
+        10 = EXT:bprotaryclubvicopisano/Resources/Private/Partials/Extensions/EventNews/
+    }
+    layoutRootPaths {
+        10 = EXT:bprotaryclubvicopisano/Resources/Private/Layouts/Extensions/EventNews/
+    }
+}

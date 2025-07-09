@@ -32,9 +32,9 @@ page {
 ##################
 plugin.bootstrap_package {
     view {
-        layoutRootPath = EXT:bprotaryclubvicopisano/Resources/Private/Layouts/
-        partialRootPath = EXT:bprotaryclubvicopisano/Resources/Private/Partials/
-        templateRootPath = EXT:bprotaryclubvicopisano/Resources/Private/Templates/
+        layoutRootPath = EXT:bprotaryclubvicopisano/Resources/Private/Layouts/Extensions/
+        partialRootPath = EXT:bprotaryclubvicopisano/Resources/Private/Partials/Extensions/
+        templateRootPath = EXT:bprotaryclubvicopisano/Resources/Private/Templates/Extensions/
     }
 }
 

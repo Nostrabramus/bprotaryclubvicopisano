@@ -3,7 +3,6 @@
 ######################
 <INCLUDE_TYPOSCRIPT: source="FILE:EXT:bootstrap_package/Configuration/TypoScript/setup.typoscript">
 
-
 ##############
 #### PAGE ####
 ##############
@@ -28,3 +27,9 @@ page {
         bprotaryclubvicopisano_scripts = EXT:bprotaryclubvicopisano/Resources/Public/JavaScript/Dist/scripts.js
     }
 }
+
+####################
+#### EXTENSIONS ####
+####################
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:bprotaryclubvicopisano/Configuration/TypoScript/Extensions/news.typoscript">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:bprotaryclubvicopisano/Configuration/TypoScript/Extensions/eventnews.typoscript">

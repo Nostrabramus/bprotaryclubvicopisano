@@ -1,0 +1,123 @@
+{namespace events=GeorgRinger\Eventnews\ViewHelpers}
+{namespace n=GeorgRinger\News\ViewHelpers}
+<f:layout name="General" />
+
+<f:section name="content">
+	<div class="row">
+		<div class="col-md-6">
+			<h2>
+				<f:translate key="calendar" extensionName="eventnews" />
+			</h2>
+			<events:calendar newsList="{newsWithNoDaySupport}" demand="{demand}" firstDayOfWeek="1">
+				<table class="table">
+					<tr class="title">
+						<th colspan="7">
+							<ul class="pager">
+								<li class="previous">
+									<f:link.action controller="News" action="month" arguments="{overwriteDemand:{month:previousMonthData.month,year:previousMonthData.year}}" pageUid="{currentPageId}" rel="nofollow">
+										&larr; {f:format.date(date:previousMonthData.date,format:'%B %Y')}
+									</f:link.action>
+								</li>
+								<li>{f:format.date(date:currentMonthData.date,format:'%B %Y')}</li>
+								<li class="next">
+									<f:link.action controller="News" action="month" arguments="{overwriteDemand:{month:nextMonthData.month,year:nextMonthData.year}}" pageUid="{currentPageId}" rel="nofollow">
+										{f:format.date(date:nextMonthData.date,format:'%B %Y')} &rarr;
+									</f:link.action>
+								</li>
+							</ul>
+						</th>
+					</tr>
+					<tr class="days">
+						<f:for each="{weeks.0}" as="day">
+							<th>
+								{f:format.date(date: day.ts, format: '%a')}
+							</th>
+						</f:for>
+					</tr>
+					<f:for each="{weeks}" as="week">
+						<tr>
+							<f:for each="{week}" as="day">
+								<f:render section="calday" arguments="{day:day, settings:settings}" />
+							</f:for>
+						</tr>
+					</f:for>
+				</table>
+			</events:calendar>
+		</div>
+		<div class="col-md-6">
+			<h2>
+				<f:translate key="list" extensionName="eventnews" />
+			</h2>
+			<div class="row">
+				<f:for each="{news}" as="n">
+					<f:if condition="{overwriteDemand.day}">
+						<f:then>
+                            <f:if condition="{events:dayCompare(newsItem:n,demand:demand)}">
+                                <f:render section="listItem" arguments="{_all}" />
+							</f:if>
+						</f:then>
+						<f:else>
+							<f:render section="listItem" arguments="{_all}" />
+						</f:else>
+					</f:if>
+
+				</f:for>
+			</div>
+		</div>
+	</div>
+</f:section>
+
+<f:section name="listItem">
+	<div class="col-md-12" style="border: 1px solid #ccc;">
+		<strong>
+			<n:link newsItem="{n}" settings="{settings}">{n.title}</n:link>
+			| {f:format.date(date:n.datetime,format:'%d.%m')}</strong>
+		<ul>
+			<f:if condition="{n.organizer}">
+				<li><strong>
+					<f:translate key="organizer" extensionName="eventnews" />
+				</strong>: {n.organizer.title}
+					<small>(uid: {n.organizer.uid})</small>
+				</li>
+			</f:if>
+			<f:if condition="{n.location}">
+				<li><strong>
+					<f:translate key="location" extensionName="eventnews" />
+				</strong>: {n.location.title}
+					<small>(uid: {n.location.uid})</small>
+				</li>
+			</f:if>
+			<f:if condition="{n.eventEnd}">
+				<li>
+					<strong>
+						<f:translate key="event_end" extensionName="eventnews" />
+					</strong>: {f:format.date(date:n.eventEnd,format:'%d.%m.%Y')}
+				</li>
+			</f:if>
+		</ul>
+	</div>
+</f:section>
+
+<f:section name="calday">
+	<td class="day{f:format.date(date: day.ts, format: 'N')} {f:if(condition: day.curmonth, then: 'curmonth', else: 'othermonth')}{f:if(condition: day.news, then: ' hasevents')}{f:if(condition: day.curday, then: ' today')}">
+		<f:if condition="{day.dayBelongsToCurrentMonth}">
+			<f:if condition="{day.news}">
+				<f:then>
+					<strong>
+						<f:link.action action="month" addQueryString="1" arguments="{overwriteDemand:{year:day.year,month:day.month,day:day.day}}">{day.day}</f:link.action>
+					</strong>
+
+					<f:for each="{day.news}" as="newsItem">
+						<div style="border: 1px solid #ccc;margin:2px;padding:2px">
+							{newsItem.title}
+						</div>
+					</f:for>
+
+				</f:then>
+				<f:else>
+					{day.day}
+				</f:else>
+			</f:if>
+		</f:if>
+	</td>
+</f:section>
