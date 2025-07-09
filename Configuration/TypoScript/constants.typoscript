@@ -69,6 +69,7 @@ page.theme.breadcrumb.enableLevel = 1
 ##########################
 page.theme.socialmedia.channels {
     facebook.url = https://www.facebook.com/profile.php?id=61576313400493
+    instagram.url = https://www.instagram.com/rotaryvicopisano/
 }
 page.theme.contact.data {
     addressLine1 = Via Salutini n. 2, Vicopisano, Italy
