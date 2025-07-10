@@ -46,6 +46,8 @@
     margin-bottom: 0;
     table-layout: fixed;
     width: 100%;
+    border-radius: 10px;
+    overflow: hidden;
 }
 .table th,
 .table td {
@@ -111,4 +113,61 @@
         1px 1px 2px rgba(0,0,0,0.5),
         inset 0 -1px 0 rgba(0,0,0,0.25),
         inset 0 0 5px rgba(255,255,255,0.5);
+}
+
+.eventListItem {
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    padding: 12px;
+    margin-bottom: 16px;
+    background-color: #fff;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.eventListItem-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 8px;
+    flex-wrap: wrap;
+}
+
+.eventListItem-title {
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.eventListItem-datetime {
+    color: #666;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+.eventListItem-details {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    border-top: 1px dashed #eee;
+    padding-top: 8px;
+}
+
+.eventListItem-detail {
+    margin-bottom: 4px;
+    font-size: 0.9rem;
+}
+
+.eventListItem-detail small {
+    color: #999;
+    font-size: 0.8rem;
+}
+
+/* Responsive: stack titolo e data su mobile */
+@media (max-width: 576px) {
+    .eventListItem-header {
+        flex-direction: column;
+    }
+    .eventListItem-datetime {
+        margin-top: 4px;
+    }
 }
