@@ -12,13 +12,13 @@
 						<th colspan="7">
 							<ul class="pager">
 								<li class="previous">
-									<f:link.action controller="News" action="month" arguments="{overwriteDemand:{month:previousMonthData.month,year:previousMonthData.year}}" pageUid="{currentPageId}" rel="nofollow">
+									<f:link.action controller="News" action="month" pluginName="NewsMonth" arguments="{overwriteDemand:{month:previousMonthData.month,year:previousMonthData.year}}" pageUid="{currentPageId}" rel="nofollow">
 										&larr; {f:format.date(date:previousMonthData.date,format:'%B %Y')}
 									</f:link.action>
 								</li>
 								<li>{f:format.date(date:currentMonthData.date,format:'%B %Y')}</li>
 								<li class="next">
-									<f:link.action controller="News" action="month" arguments="{overwriteDemand:{month:nextMonthData.month,year:nextMonthData.year}}" pageUid="{currentPageId}" rel="nofollow">
+									<f:link.action controller="News" action="month" pluginName="NewsMonth" arguments="{overwriteDemand:{month:nextMonthData.month,year:nextMonthData.year}}" pageUid="{currentPageId}" rel="nofollow">
 										{f:format.date(date:nextMonthData.date,format:'%B %Y')} &rarr;
 									</f:link.action>
 								</li>
@@ -116,7 +116,7 @@
 			<f:if condition="{day.news}">
 				<f:then>
 					<strong>
-						<f:link.action action="month" addQueryString="1" arguments="{overwriteDemand:{year:day.year,month:day.month,day:day.day}}">{day.day}</f:link.action>
+						<f:link.action action="month" pluginName="NewsMonth" addQueryString="1" arguments="{overwriteDemand:{year:day.year,month:day.month,day:day.day}}">{day.day}</f:link.action>
 					</strong>
 
 					<f:for each="{day.news}" as="newsItem">
